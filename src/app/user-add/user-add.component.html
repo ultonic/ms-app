@@ -1,0 +1,26 @@
+<form [formGroup]="addForm">
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput formControlName="firstName" type="text" placeholder="Имя" >
+      <mat-error *ngIf="firstName.invalid && firstName.touched" class="has-text-danger">
+        Заполните данное поле
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="secondName" placeholder="Отчество">
+      <mat-error *ngIf="secondName.invalid && secondName.touched" class="has-text-danger">
+        Заполните данное поле
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="lastName" placeholder="Фамилия">
+      <mat-error *ngIf="secondName.invalid && secondName.touched" class="has-text-danger">
+        Заполните данное поле
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button [disabled]="addForm.invalid" color="primary" (click)="addUser()">Добавить</button>
+  </div>
+</form>
